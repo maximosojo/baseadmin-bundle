@@ -8,11 +8,11 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\Config\FileLocator;
 
 /**
- * TestExtension
+ * BaseAdminExtension
  * 
  * @author Máximo Sojo <maxsojo13@gmail.com>
  */
-class TestExtension extends Extension
+class BaseAdminExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {

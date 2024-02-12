@@ -1,0 +1,6 @@
+{% set translation_domain = field_options["translation_domain"]|default('messages') %}
+{% if view == 'show' %}
+    {{ value|nl2br|trans({},translation_domain) }}
+{% else %}
+    <span title="{{ value }}">{{ value|striptags|easyadmin_truncate|trans({},translation_domain) }}</span>
+{% endif %}

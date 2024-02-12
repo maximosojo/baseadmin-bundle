@@ -1,0 +1,24 @@
+{% extends '@!EasyAdmin/layout.html.twig' %}
+
+{# {% block show_fields %}
+    {% if tab is not null %}
+        {% include 'EasyAdminExtensionBundle:default:tabs.html.twig' %}
+    {% endif %}
+    {% for field, metadata in fields %}
+        {% block show_field %}
+            <div class="form-group field-{{ metadata.type|default('default')|lower }} {{ metadata.css_class|default('') }}">
+                <label class="control-label">
+                    {{ metadata.label|trans(_trans_parameters)|raw }}
+                </label>
+                <div class="form-widget">
+                    <div class="form-control">
+                        {{ easyadmin_render_field_for_show_view(_entity_config.name, entity, metadata) }}
+                    </div>
+                    {% if metadata.help|default('') != '' %}
+                        <small class="form-help"><i class="fa fa-fw fa-info-circle"></i> {{ metadata.help|trans|raw }}</small>
+                    {% endif %}
+                </div>
+            </div>
+        {% endblock %}
+    {% endfor %}
+{% endblock show_fields %} #}
