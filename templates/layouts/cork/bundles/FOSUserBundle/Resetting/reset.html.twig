@@ -1,0 +1,11 @@
+{% extends '@BaseAdmin/layouts/cork/bundles/FOSUserBundle/layout.html.twig' %}
+
+{% set action = path("fos_user_resetting_reset",{'token': token}) %}
+{% set _resetting_reset_label = resetting_reset_label is defined ? resetting_reset_label|trans : 'button.resetting.reset'|trans %}
+
+{% block page_title %}{{"title.resetting.reset"|trans}}{% endblock page_title %}
+{% block page_title_info %}{{"title.resetting.reset.info"|trans}}{% endblock page_title_info %}
+
+{% block fos_user_content %}
+	{% include('@BaseAdmin/layouts/cork/bundles/FOSUserBundle/Resetting/reset_content.html.twig') %}
+{% endblock fos_user_content %}

@@ -95,10 +95,9 @@
                 <div class="">
                     {% block user_menu %}
                         <div class="dropdown-item">
-                            <div>{{ user_menu_avatar }}</div>
-                            <div>
-                                <span class="user-name">{{ ea.user is null ? 'user.anonymous'|trans(domain = 'EasyAdminBundle') : ea.userMenu.name }}</span>
-                            </div>
+                            <a href="{{ path('easyadmin',{routeName:'fos_user_profile_show'}) }}" class="user-action">
+                                <i class="fa fa-fw fa-user fa-xl"></i>{{ ea.user is null ? 'user.anonymous'|trans(domain = 'EasyAdminBundle') : ea.userMenu.name }}
+                            </a>
                         </div>
 
                         {% if ea.userMenu.items|length > 0 %}
@@ -110,7 +109,7 @@
                                     <a href="{{ item.linkUrl }}" class="user-action {{ item.cssClass }}"
                                         target="{{ item.linkTarget }}" rel="{{ item.linkRel }}"
                                         referrerpolicy="origin-when-cross-origin">
-                                        {% if item.icon is not empty %}<i class="fa fa-fw {{ item.icon }}"></i>{% endif %}
+                                        {% if item.icon is not empty %}<i class="fa fa-fw {{ item.icon }} fa-xl"></i>{% endif %}
                                         {{ item.label|trans }}
                                     </a>
                                 </div>

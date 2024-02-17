@@ -1,0 +1,22 @@
+# Titles
+title.security.login: "Iniciar sesión"
+title.security.login.info: "Inicie sesión en su cuenta para continuar."
+title.resetting.request: "Recuperación de contraseña"
+title.resetting.request.info: "Introduce tu correo electrónico y te enviaremos las instrucciones."
+title.resetting.reset: "Cambiar contraseña"
+title.resetting.reset.info: "Introduce y repite tu nueva contraseña."
+title.resetting.check_email: "Verificar correo electrónico"
+title.resetting.check_email.info: |
+    Se ha enviado un correo electrónico a tu cuenta de correo. Contiene un enlace de activación al que debes acceder para restablecer tu contraseña.
+    Nota: Solo se puede solicitar una nueva contraseña cada %tokenLifetime% horas.
+
+    Si no recibes un correo electrónico, comprueba tu carpeta de correo no deseado o inténtalo de nuevo.
+
+# Labels
+label.username: "Nombre de usuario"
+label.email: "Correo electrónico"
+label.username_or_email: "Nombre de usuario o correo electrónico"
+# Buttons
+button.resetting.request: "Recuperar contraseña"
+button.security.login: "Iniciar sesión"
+button.resetting.reset: "Cambiar contraseña"

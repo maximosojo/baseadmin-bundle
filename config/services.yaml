@@ -1,9 +1,45 @@
+parameters:
+    .container.dumper.inline_factories: true
+    # debug.container.dump: false
+    
 services:
-    # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        
+    Maximosojo\Bundle\BaseAdminBundle\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
 
     Maximosojo\Bundle\BaseAdminBundle\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
+
+    #Maximosojo\Bundle\BaseAdminBundle\Form\:
+    #    resource: '../src/Form'
+    #    tags: ['form.service_arguments']
+
+    fos_user.profile.controller:
+        class: 'Maximosojo\Bundle\BaseAdminBundle\Controller\FOSUserBundle\ProfileController'
+        public: true
+        arguments:
+            - '@event_dispatcher'
+            - '@fos_user.profile.form.factory'
+            - '@fos_user.user_manager'
+        #calls: 
+        #    - [setContainer, ['@service_container']]
+        tags: ["container.service_subscriber", "controller.service_arguments"]
+        autowire: true
+
+    Maximosojo\Bundle\BaseAdminBundle\Controller\FOSUserBundle\ProfileController:
+        alias: "fos_user.profile.controller"
+        public: true
+
+    # maximosojo_baseadmin.services.easy_admin_context_service:
+    #     class: Maximosojo\Bundle\BaseAdminBundle\Service\EasyAdminBundle\AdminContextService
+
+    # Maximosojo\Bundle\BaseAdminBundle\Service\EasyAdminBundle\AdminContextServiceInterface:
+    #     alias: maximosojo_baseadmin.services.easy_admin_context_service
+    #     public: true

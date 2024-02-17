@@ -1,0 +1,5 @@
+fos_user_profile_show:
+    path: /profile
+    defaults:
+        _controller:  Maximosojo\Bundle\BaseAdminBundle\Controller\FOSUserBundle\ProfileController::showAction
+        _methods: GET

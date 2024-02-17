@@ -1,0 +1,6 @@
+{{ form_start(form, { 'action': action|default(''), 'attr': { 'class': 'fos_user_resetting_reset text-left' } }) }}
+    {{ form_widget(form) }}
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">{{ _resetting_reset_label }}</button>
+    </div>
+{{ form_end(form) }}
