@@ -11,7 +11,8 @@ title.resetting.check_email.info: |
     Nota: Solo se puede solicitar una nueva contraseña cada %tokenLifetime% horas.
 
     Si no recibes un correo electrónico, comprueba tu carpeta de correo no deseado o inténtalo de nuevo.
-
+title.profile: "Perfil"
+title.profile.edit: "Actualizar perfil"
 # Labels
 label.username: "Nombre de usuario"
 label.email: "Correo electrónico"

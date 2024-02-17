@@ -1,67 +1,83 @@
 {% extends '@BaseAdmin/bundles/EasyAdminBundle/layout.html.twig' %}
 
 {% block wrapper_wrapper %}
-    <div id="load_screen"> <div class="loader"> <div class="loader-content">
-        <div class="spinner-grow align-self-center"></div>
-    </div></div></div>
+    
+    <div id="load_screen">
+        {% block load_screen %}
+            <div class="loader"> <div class="loader-content"><div class="spinner-grow align-self-center"></div></div></div>
+        {% endblock load_screen %}
+    </div>
     
     <div class="header-container fixed-top">
-        {{ include('@BaseAdmin/layouts/cork/theme/header.html.twig') }}
+        {% block header_container %}
+            {{ include('@BaseAdmin/layouts/cork/theme/header.html.twig') }}
+        {% endblock header_container %}
     </div>
-
+    
     <div class="sub-header-container">
-        {{ include('@BaseAdmin/layouts/cork/theme/sub_menu_header.html.twig') }}
+        {% block sub_header_container %}
+            {{ include('@BaseAdmin/layouts/cork/theme/sub_menu_header.html.twig') }}
+        {% endblock sub_header_container %}
     </div>
-
+    
     <div class="main-container" id="container">
-        <div class="overlay"></div>
-        <div class="search-overlay"></div>
-        <div class="sidebar-wrapper sidebar-theme">
-            {{ include('@BaseAdmin/layouts/cork/theme/sidebar.html.twig') }}
-        </div>
-
-        <div class="main-content" id="content">
-            <div class="layout-px-spacing">
-                <div class="layout-top-spacing widget-content widget-content-area br-6">
-
-                    {% block content_header_wrapper %}
-                        {% set has_help_message = (ea.crud.helpMessage ?? '') is not empty %}
-                        <section class="content-header pt-3">
-                            {% block content_header %}
-                                <div class="content-header-title">
-                                    <h1 class="title">
-                                        {% block content_title %}{% endblock %}
-
-                                        {% block content_help %}
-                                            {% if has_help_message %}
-                                                <a tabindex="0" class="content-header-help" data-bs-toggle="popover" data-bs-custom-class="ea-content-help-popover" data-bs-animation="true" data-bs-html="true" data-bs-placement="bottom" data-bs-trigger="focus" data-bs-content="{{ ea.crud.helpMessage|trans|e('html_attr') }}">
-                                                    <i class="far fa-question-circle"></i>
-                                                </a>
-                                            {% endif %}
-                                        {% endblock %}
-                                    </h1>
-                                </div>
-
-                                {% block page_actions_wrapper %}
-                                    <div class="page-actions">{% block page_actions %}{% endblock %}</div>
-                                {% endblock %}
-                            {% endblock content_header %}
-                        </section>
-                    {% endblock content_header_wrapper %}
-
-                    {% block main %}{% endblock %}
-
-                    {% block content_footer_wrapper %}
-                        {% set content_footer = block('content_footer') is defined ? block('content_footer') : '' %}
-                        {% if content_footer is not empty %}
-                            <section class="content-footer">
-                                {{ content_footer }}
-                            </section>
-                        {% endif %}
-                    {% endblock %}
-                </div>
+        {% block main_container %}
+            <div class="overlay"></div>
+            <div class="search-overlay"></div>            
+            <div class="sidebar-wrapper sidebar-theme">
+                {% block sidebar_wrapper %}
+                    {{ include('@BaseAdmin/layouts/cork/theme/sidebar.html.twig') }}
+                {% endblock sidebar_wrapper %}
             </div>
-        </div>
+
+            <div class="main-content" id="content">
+                {% block main_content %}
+                    <div class="layout-px-spacing">
+                        {% block layout_px_spacing %}                        
+                            <div class="layout-top-spacing widget-content widget-content-area br-6">
+                                {% block layout_top_spacing %}
+                                    {% block content_header_wrapper %}
+                                        {% set has_help_message = (ea.crud.helpMessage ?? '') is not empty %}
+                                        <section class="content-header pt-3">
+                                            {% block content_header %}
+                                                <div class="content-header-title">
+                                                    <h1 class="title">
+                                                        {% block content_title %}{% endblock %}
+
+                                                        {% block content_help %}
+                                                            {% if has_help_message %}
+                                                                <a tabindex="0" class="content-header-help" data-bs-toggle="popover" data-bs-custom-class="ea-content-help-popover" data-bs-animation="true" data-bs-html="true" data-bs-placement="bottom" data-bs-trigger="focus" data-bs-content="{{ ea.crud.helpMessage|trans|e('html_attr') }}">
+                                                                    <i class="far fa-question-circle"></i>
+                                                                </a>
+                                                            {% endif %}
+                                                        {% endblock %}
+                                                    </h1>
+                                                </div>
+
+                                                {% block page_actions_wrapper %}
+                                                    <div class="page-actions">{% block page_actions %}{% endblock %}</div>
+                                                {% endblock %}
+                                            {% endblock content_header %}
+                                        </section>
+                                    {% endblock content_header_wrapper %}
+
+                                    {% block main %}{% endblock %}
+
+                                    {% block content_footer_wrapper %}
+                                        {% set content_footer = block('content_footer') is defined ? block('content_footer') : '' %}
+                                        {% if content_footer is not empty %}
+                                            <section class="content-footer">
+                                                {{ content_footer }}
+                                            </section>
+                                        {% endif %}
+                                    {% endblock %}
+                                {% endblock layout_top_spacing %}
+                            </div>
+                        {% endblock layout_px_spacing %}
+                    </div>
+                {% endblock main_content %}
+            </div>
+        {% endblock main_container %}
     </div>
 {% endblock wrapper_wrapper %}
 

@@ -3,3 +3,9 @@ fos_user_profile_show:
     defaults:
         _controller:  Maximosojo\Bundle\BaseAdminBundle\Controller\FOSUserBundle\ProfileController::showAction
         _methods: GET
+
+fos_user_profile_edit:
+    path: /profile/edit
+    defaults:
+        _controller:  Maximosojo\Bundle\BaseAdminBundle\Controller\FOSUserBundle\ProfileController::editAction
+        _methods: GET

@@ -13,6 +13,7 @@ namespace Maximosojo\Bundle\BaseAdminBundle\Controller\FOSUserBundle;
 
 use FOS\UserBundle\Controller\ProfileController as BaseProfileController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use FOS\UserBundle\Form\Factory\FactoryInterface;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 use FOS\UserBundle\Model\UserManagerInterface;
@@ -36,6 +37,8 @@ class ProfileController extends BaseProfileController
         $this->eventDispatcher = CompatibilityUtil::upgradeEventDispatcher($eventDispatcher);
         $this->formFactory = $formFactory;
         $this->userManager = $userManager;
+
+        parent::__construct($eventDispatcher,$formFactory,$userManager);
     }
 
     /**
@@ -48,5 +51,17 @@ class ProfileController extends BaseProfileController
     public function showAction(): Response
     {
         return parent::showAction();
+    }
+
+    /**
+     * Edit the user
+     * 
+     * @author Máximo Sojo <maxsojo13@gmail.com>
+     * 
+     * @return Response
+     */
+    public function editAction(Request $request): Response
+    {
+        return parent::editAction($request);
     }
 }

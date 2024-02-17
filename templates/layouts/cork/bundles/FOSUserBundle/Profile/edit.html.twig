@@ -1,0 +1,8 @@
+{% extends '@BaseAdmin/layouts/cork/profile.html.twig' %}
+
+{% block page_title %}{{"title.profile.edit"|trans}}{% endblock page_title %}
+{% block page_title_info %}{{"title.profile.edit.info"|trans}}{% endblock page_title_info %}
+
+{% block widget_content_area %}
+	{% include "@BaseAdmin/layouts/cork/bundles/FOSUserBundle/Profile/edit_content.html.twig" %}
+{% endblock widget_content_area %}
