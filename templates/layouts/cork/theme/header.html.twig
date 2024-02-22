@@ -95,7 +95,7 @@
                 <div class="">
                     {% block user_menu %}
                         <div class="dropdown-item">
-                            <a href="{{ path('easyadmin',{routeName:'fos_user_profile_show'}) }}" class="user-action">
+                            <a href="{{ path('easyadmin',{routeName:'fos_user_profile_index'}) }}" class="user-action">
                                 <i class="fa fa-fw fa-user fa-xl"></i>{{ ea.user is null ? 'user.anonymous'|trans(domain = 'EasyAdminBundle') : ea.userMenu.name }}
                             </a>
                         </div>

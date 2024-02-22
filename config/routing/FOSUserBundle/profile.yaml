@@ -1,4 +1,10 @@
 fos_user_profile_show:
+    path: /profile/show
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'easyadmin'
+
+fos_user_profile_index:
     path: /profile
     defaults:
         _controller:  Maximosojo\Bundle\BaseAdminBundle\Controller\FOSUserBundle\ProfileController::showAction

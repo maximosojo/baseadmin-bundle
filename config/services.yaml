@@ -33,6 +33,12 @@ services:
         tags: ["container.service_subscriber", "controller.service_arguments"]
         autowire: true
 
+    maximosojo_baseadmin.fos_user.profile.form.type:
+        class: 'Maximosojo\Bundle\BaseAdminBundle\Form\FOSUserBundle\ProfileFormType'
+        arguments: ["%fos_user.model.user.class%"]
+        tags:
+            - { name: form.type, alias: fos_user_profile }
+
     Maximosojo\Bundle\BaseAdminBundle\Controller\FOSUserBundle\ProfileController:
         alias: "fos_user.profile.controller"
         public: true
