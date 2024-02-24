@@ -1,0 +1,3 @@
+maximosojo_baseadmin_annotations_all:
+    resource: '@BaseAdminBundle/src/Controller/'
+    type: annotation

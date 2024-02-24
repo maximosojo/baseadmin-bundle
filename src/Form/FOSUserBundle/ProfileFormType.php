@@ -14,6 +14,7 @@ namespace Maximosojo\Bundle\BaseAdminBundle\Form\FOSUserBundle;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -67,6 +68,10 @@ class ProfileFormType extends AbstractType
             ->add('lastname', TextType::class, ['label' => 'label.lastname'])
             ->add('username', TextType::class, ['label' => 'label.username'])
             ->add('email', EmailType::class, ['label' => 'label.email'])
+            ->add('birthday', DateType::class, [
+                'label' => 'label.birthday',
+                'widget' => 'single_text'
+            ])
         ;
     }
 }

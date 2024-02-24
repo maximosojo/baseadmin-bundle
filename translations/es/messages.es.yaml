@@ -13,14 +13,20 @@ title.resetting.check_email.info: |
     Si no recibes un correo electrónico, comprueba tu carpeta de correo no deseado o inténtalo de nuevo.
 title.profile: "Perfil"
 title.profile.edit: "Actualizar perfil"
+title.profile.information: "Información"
+title.profile.password: "Contraseña de acceso"
+title.profile.password.edit: "Actualizar contraseña"
 # Labels
 label.firstname: "Nombre"
 label.lastname: "Apellido"
 label.username: "Nombre de usuario"
 label.email: "Correo electrónico"
 label.username_or_email: "Nombre de usuario o correo electrónico"
+label.birthday: "Fecha de nacimiento"
 # Buttons
 button.update: "Actualizar"
+button.profile.update: "Actualizar perfil"
+button.profile.password.update: "Actualizar contraseña"
 button.resetting.request: "Recuperar contraseña"
 button.security.login: "Iniciar sesión"
 button.resetting.reset: "Cambiar contraseña"

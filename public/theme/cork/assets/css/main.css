@@ -2067,3 +2067,8 @@ table .badge-success, table .badge-primary, table .badge-warning, table .badge-d
 
 .position-relative {
   position: relative; }
+
+label.required:after {
+    content: '   *';
+    color: #d81b60;
+}

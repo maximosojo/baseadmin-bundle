@@ -1,4 +1,23 @@
-<h3 class="">Bio</h3>
-<p>I'm Web Developer from California. I code and design websites worldwide. Mauris varius tellus vitae tristique sagittis. Sed aliquet, est nec auctor aliquet, orci ex vestibulum ex, non pharetra lacus erat ac nulla.</p>
-
-<p>Sed vulputate, ligula eget mollis auctor, lectus elit feugiat urna, eget euismod turpis lectus sed ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc ut velit finibus, scelerisque sapien vitae, pharetra est. Nunc accumsan ligula vehicula scelerisque vulputate.</p>          
+<h3 class="">{{"title.profile.information"|trans}}</h3>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="form-group">
+            <p>{{"label.firstname"|trans}}:&nbsp;</p><span>{{app.user.firstname}}</span>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group">
+            <p>{{"label.lastname"|trans}}:&nbsp;</p><span>{{app.user.lastname}}</span>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group">
+            <p>{{"label.username"|trans}}:&nbsp;</p><span>{{app.user.username}}</span>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group">
+            <p>{{"label.email"|trans}}:&nbsp;</p><span>{{app.user.email}}</span>
+        </div>
+    </div>
+</div>

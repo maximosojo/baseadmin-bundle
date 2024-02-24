@@ -43,9 +43,30 @@ services:
         alias: "fos_user.profile.controller"
         public: true
 
+    fos_user.change_password.controller:
+        class: 'Maximosojo\Bundle\BaseAdminBundle\Controller\FOSUserBundle\ChangePasswordController'
+        public: true
+        arguments:
+            - '@event_dispatcher'
+            - '@fos_user.change_password.form.factory'
+            - '@fos_user.user_manager'
+        tags: ["container.service_subscriber", "controller.service_arguments"]
+        autowire: true
+
+    Maximosojo\Bundle\BaseAdminBundle\Controller\FOSUserBundle\ChangePasswordController:
+        alias: "fos_user.change_password.controller"
+        public: true
+
     # maximosojo_baseadmin.services.easy_admin_context_service:
     #     class: Maximosojo\Bundle\BaseAdminBundle\Service\EasyAdminBundle\AdminContextService
 
     # Maximosojo\Bundle\BaseAdminBundle\Service\EasyAdminBundle\AdminContextServiceInterface:
     #     alias: maximosojo_baseadmin.services.easy_admin_context_service
     #     public: true
+
+    maximosojo_baseadmin.service.easyadmin_builder_service:
+      class: Maximosojo\Bundle\BaseAdminBundle\Service\EasyAdminBundle\EasyAdminBuilderService
+
+    Maximosojo\Bundle\BaseAdminBundle\Service\EasyAdminBundle\EasyAdminBuilderServiceInterface:
+        alias: "maximosojo_baseadmin.service.easyadmin_builder_service"
+        public: true

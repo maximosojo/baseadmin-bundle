@@ -24,7 +24,7 @@
 
         <li class="nav-item theme-text">
             {% block responsive_header_text %}
-                <a title="{{ ea.dashboardTitle|striptags }}" href="{{ path(ea.dashboardRouteName) }}" class="nav-link"> {{ ea.dashboardTitle|raw }} </a>
+                <a title="{{ ea.dashboardTitle|striptags }}" href="{{ path('baseadmin_route_easyadmin_dashboard') }}" class="nav-link"> {{ ea.dashboardTitle|raw }} </a>
             {% endblock responsive_header_text %}
         </li>
     </ul>
@@ -95,7 +95,7 @@
                 <div class="">
                     {% block user_menu %}
                         <div class="dropdown-item">
-                            <a href="{{ path('easyadmin',{routeName:'fos_user_profile_index'}) }}" class="user-action">
+                            <a href="{{ path('fos_user_profile_show') }}" class="user-action">
                                 <i class="fa fa-fw fa-user fa-xl"></i>{{ ea.user is null ? 'user.anonymous'|trans(domain = 'EasyAdminBundle') : ea.userMenu.name }}
                             </a>
                         </div>
