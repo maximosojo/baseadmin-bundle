@@ -4,7 +4,8 @@
 {% set _resetting_request_label = resetting_request_label is defined ? resetting_request_label|trans : 'button.resetting.request'|trans %}
 
 {% block page_title %}{{"title.resetting.request"|trans}}{% endblock page_title %}
-{% block page_title_info %}{{"title.resetting.request.info"|trans}}{% endblock page_title_info %}
+{% block page_title_info %}{{"title.resetting.request"|trans}}{% endblock page_title_info %}
+{% block page_sub_title_info %}{{"title.resetting.request.info"|trans}}{% endblock page_sub_title_info %}
 
 {% block fos_user_content %}
 	{% include('@BaseAdmin/layouts/cork/bundles/FOSUserBundle/Resetting/request_content.html.twig') %}

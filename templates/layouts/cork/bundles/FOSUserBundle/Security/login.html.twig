@@ -6,7 +6,8 @@
 {% set forgot_password_path = path("fos_user_resetting_request") %}
 	
 {% block page_title %}{{"title.security.login"|trans}}{% endblock page_title %}
-{% block page_title_info %}{{"title.security.login.info"|trans}}{% endblock page_title_info %}
+{% block page_title_info %}{{"title.security.login"|trans}}{% endblock page_title_info %}
+{% block page_sub_title_info %}{{"title.security.login.info"|trans}}{% endblock page_sub_title_info %}
 
 {% block fos_user_content %}
 	{% include('@BaseAdmin/layouts/cork/bundles/FOSUserBundle/Security/login_content.html.twig') %}

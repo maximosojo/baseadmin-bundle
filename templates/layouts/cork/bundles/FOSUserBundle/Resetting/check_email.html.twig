@@ -1,7 +1,8 @@
 {% extends '@BaseAdmin/layouts/cork/bundles/FOSUserBundle/layout.html.twig' %}
 
 {% block page_title %}{{"title.resetting.check_email"|trans}}{% endblock page_title %}
-{% block page_title_info %}{{"title.resetting.check_email.info"|trans({'%tokenLifetime%': tokenLifetime})|nl2br}}{% endblock page_title_info %}
+{% block page_title_info %}{{"title.resetting.check_email"|trans}}{% endblock page_title_info %}
+{% block page_sub_title_info %}{{"title.resetting.check_email.info"|trans({'%tokenLifetime%': tokenLifetime})|nl2br}}{% endblock page_sub_title_info %}
 
 {% block fos_user_content %}
 	<a href="{{ path('fos_user_security_login') }}" class="btn btn-link btn-lg btn-block">{{ 'button.security.login'|trans }}</a>
