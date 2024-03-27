@@ -1,5 +1,9 @@
 {% extends '@BaseAdmin/bundles/EasyAdminBundle/layout.html.twig' %}
 
+{% block head_favicon %}
+    <link rel="icon" type="image/x-icon" href="{{asset('build/images/favicon.ico')}}"/>
+{% endblock %}
+
 {% block wrapper_wrapper %}
     
     <div id="load_screen">
