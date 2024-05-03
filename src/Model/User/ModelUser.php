@@ -40,7 +40,7 @@ abstract class ModelUser extends BaseUser
      * @var string
      */
     #[ORM\Column(name: 'locale', type: 'string', length: 8, nullable: true)]
-    protected $locale = 'es_VE';
+    protected $locale;
 
     /**
      * @var string
