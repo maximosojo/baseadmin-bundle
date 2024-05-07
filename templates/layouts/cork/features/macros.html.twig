@@ -1,0 +1,27 @@
+{% macro widget_card_four(params) %}
+    {% set value = params.value is defined ? params.value : 'value' %}
+    {% set title = params.title is defined ? params.title : 'title' %}
+    {% set path = params.path is defined ? params.path : '#' %}
+    {% set icon = params.icon is defined ? params.icon : '<i class="fas fa-list fa-2x"></i>' %}
+
+    <div class="widget widget-card-four">
+        <div class="widget-content">
+            <div class="w-content">
+                <div class="w-info">
+                    <h6 class="value">{{value}}</h6>
+                    <a href="{{path}}">
+                        <p class="">{{title}}</p>
+                    </a>
+                </div>
+                <div class="">
+                    <div class="w-icon">
+                        {{icon|raw}}
+                    </div>
+                </div>
+            </div>
+            {#<div class="progress">
+                <div class="progress-bar bg-gradient-secondary" role="progressbar" style="width: 57%" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>#}
+        </div>
+    </div>
+{% endmacro widget_card_four %}
