@@ -24,7 +24,7 @@
         {% endblock sub_header_container %}
     </div>
     
-    <div class="main-container" id="container">
+    <div {% block main_container_attr %}{% endblock %} class="main-container" id="container">
         {% block main_container %}
             <div class="overlay"></div>
             <div class="search-overlay"></div>            
