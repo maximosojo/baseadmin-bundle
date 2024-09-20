@@ -23,6 +23,7 @@ final class Select2EntityField implements FieldInterface
             ->setProperty($propertyName)
             ->setLabel($label)
             ->setTemplateName('crud/field/array')
+            ->setTemplatePath('@BaseAdmin/bundles/EasyAdminBundle/crud/field/select2entity.html.twig')
             ->setFormType(Select2EntityType::class)
             ->addCssClass('field-select-2-entity')
             ->setDefaultColumns('col-md-7 col-xxl-6');

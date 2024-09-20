@@ -3,6 +3,7 @@
 namespace Maximosojo\Bundle\BaseAdminBundle\Model;
 
 use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 
 /**
  * 
@@ -35,5 +36,12 @@ class EasyAdminBuilder implements EasyAdminBuilderInterface
         }
         
         return $assets;
+    }
+
+    public function configureCrud(): Crud
+    {
+        return Crud::new()
+            // ->overrideTemplate('crud/field/select2entity','@BaseAdmin/bundles/EasyAdminBundle/crud/field/select2entity.html.twig')
+        ;
     }
 }
