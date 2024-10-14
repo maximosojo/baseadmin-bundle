@@ -59,7 +59,9 @@
             {% set itemExtraAttr = itemExtraAttr ~ (item.isExpanded ? 'aria-expanded="true" data-active="true"') %}
         {% endif %}
 
-        <a href="{{ itemHref }}" {{itemExtraAttr|raw}} class="{{ item.hasSubItems ? 'dropdown-toggle' : 'dropdown-toggle' }} {{ item.cssClass }}" {{ item.isSelected ? 'data-active="true"' }} target="{{ item.linkTarget }}" rel="{{ item.linkRel }}" referrerpolicy="origin-when-cross-origin" {{ _self.render_html_attributes(item) }}>
+        {% set aClass = item.hasSubItems or item.icon is not empty ? 'dropdown-toggle' : '' %}
+
+        <a href="{{ itemHref }}" {{itemExtraAttr|raw}} class="{{ aClass }} {{ item.cssClass }}" {{ item.isSelected ? 'data-active="true"' }} target="{{ item.linkTarget }}" rel="{{ item.linkRel }}" referrerpolicy="origin-when-cross-origin" {{ _self.render_html_attributes(item) }}>
             {% if item.icon is not empty %}<i class="menu-icon fa-fw {{ item.icon }}"></i>{% endif %}
             <span class="menu-item-label position-relative">
                 {{ item.label|trans|raw }}
