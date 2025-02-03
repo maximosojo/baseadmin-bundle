@@ -44,7 +44,7 @@
         "symfony/validator": "^6.4",
         "symfony/webpack-encore-bundle": "^1.14",
         "symfony/yaml": "^6.4",
-        "easycorp/easyadmin-bundle": "^4.15",
+        "easycorp/easyadmin-bundle": "4.15.1",
         "friendsofsymfony/jsrouting-bundle": "^3.5",
         "friendsofsymfony/rest-bundle": "^3.3",
         "friendsofsymfony/user-bundle": "^3.0"
