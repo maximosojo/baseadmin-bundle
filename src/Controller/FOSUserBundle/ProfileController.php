@@ -62,7 +62,8 @@ class ProfileController extends AbstractDashboardController implements Dashboard
     {
         $user = $this->getUser();
         if (!is_object($user) || !$user instanceof UserInterface) {
-            throw new AccessDeniedException('This user does not have access to this section.');
+            // throw new AccessDeniedException('This user does not have access to this section.');
+            return new RedirectResponse($this->generateUrl('fos_user_security_login'));
         }
 
         return $this->render('@FOSUser/Profile/show.html.twig', [
@@ -82,7 +83,8 @@ class ProfileController extends AbstractDashboardController implements Dashboard
     {
         $user = $this->getUser();
         if (!is_object($user) || !$user instanceof UserInterface) {
-            throw new AccessDeniedException('This user does not have access to this section.');
+            // throw new AccessDeniedException('This user does not have access to this section.');
+            return new RedirectResponse($this->generateUrl('fos_user_security_login'));
         }
 
         $event = new GetResponseUserEvent($user, $request);
