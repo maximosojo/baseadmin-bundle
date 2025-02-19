@@ -86,40 +86,44 @@
     </ul>
 
     <ul class="navbar-item flex-row ml-md-auto">
-
-        <li class="nav-item dropdown user-profile-dropdown">
-            <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                {{ user_menu_avatar }}
-            </a>
-            <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
-                <div class="">
-                    {% block user_menu %}
-                        <div class="dropdown-item">
-                            <a href="{{ path('fos_user_profile_show') }}" class="user-action">
-                                <i class="fa fa-fw fa-user fa-xl"></i>{{ ea.user is null ? 'user.anonymous'|trans(domain = 'EasyAdminBundle') : ea.userMenu.name }}
-                            </a>
-                        </div>
-
-                        {% if ea.userMenu.items|length > 0 %}
-                        {% for item in ea.userMenu.items %}                            
-                            {% if item.isMenuSection and not loop.first %}
-                                <hr class="dropdown-divider">
-                            {% elseif not item.isMenuSection %}
+        {% block navbar_item_menu_right %}
+            
+            {% block navbar_item_menu_right_user %}
+                <li class="nav-item dropdown user-profile-dropdown">
+                    <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        {{ user_menu_avatar }}
+                    </a>
+                    <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
+                        <div class="">
+                            {% block user_menu %}
                                 <div class="dropdown-item">
-                                    <a href="{{ item.linkUrl }}" class="user-action {{ item.cssClass }}"
-                                        target="{{ item.linkTarget }}" rel="{{ item.linkRel }}"
-                                        referrerpolicy="origin-when-cross-origin">
-                                        {% if item.icon is not empty %}<i class="fa fa-fw {{ item.icon }} fa-xl"></i>{% endif %}
-                                        {{ item.label|trans }}
+                                    <a href="{{ path('fos_user_profile_show') }}" class="user-action">
+                                        <i class="fa fa-fw fa-user fa-xl"></i>{{ ea.user is null ? 'user.anonymous'|trans(domain = 'EasyAdminBundle') : ea.userMenu.name }}
                                     </a>
                                 </div>
-                            {% endif %}
-                        {% endfor %}
-                    {% endif %}
-                    {% endblock user_menu %}
-                </div>
-            </div>
-        </li>
 
+                                {% if ea.userMenu.items|length > 0 %}
+                                {% for item in ea.userMenu.items %}                            
+                                    {% if item.isMenuSection and not loop.first %}
+                                        <hr class="dropdown-divider">
+                                    {% elseif not item.isMenuSection %}
+                                        <div class="dropdown-item">
+                                            <a href="{{ item.linkUrl }}" class="user-action {{ item.cssClass }}"
+                                                target="{{ item.linkTarget }}" rel="{{ item.linkRel }}"
+                                                referrerpolicy="origin-when-cross-origin">
+                                                {% if item.icon is not empty %}<i class="fa fa-fw {{ item.icon }} fa-xl"></i>{% endif %}
+                                                {{ item.label|trans }}
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                            {% endblock user_menu %}
+                        </div>
+                    </div>
+                </li>
+            {% endblock navbar_item_menu_right_user %}
+
+        {% endblock navbar_item_menu_right %}
     </ul>
 </header>
