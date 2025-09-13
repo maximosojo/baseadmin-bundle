@@ -11,8 +11,6 @@
 
 namespace Maximosojo\Bundle\BaseAdminBundle\Controller\FOSUserBundle;
 
-use FOS\UserBundle\Controller\ProfileController as BaseProfileController;
-use FOS\UserBundle\CompatibilityUtil;
 use FOS\UserBundle\Event\FilterUserResponseEvent;
 use FOS\UserBundle\Event\FormEvent;
 use FOS\UserBundle\Event\GetResponseUserEvent;
@@ -45,7 +43,7 @@ class ProfileController extends AbstractDashboardController implements Dashboard
 
     public function __construct(EventDispatcherInterface $eventDispatcher, FactoryInterface $formFactory, UserManagerInterface $userManager)
     {
-        $this->eventDispatcher = CompatibilityUtil::upgradeEventDispatcher($eventDispatcher);
+        $this->eventDispatcher = $eventDispatcher;
         $this->formFactory = $formFactory;
         $this->userManager = $userManager;
     }

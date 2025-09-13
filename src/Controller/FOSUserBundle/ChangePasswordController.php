@@ -11,7 +11,6 @@
 
 namespace Maximosojo\Bundle\BaseAdminBundle\Controller\FOSUserBundle;
 
-use FOS\UserBundle\CompatibilityUtil;
 use FOS\UserBundle\Event\FilterUserResponseEvent;
 use FOS\UserBundle\Event\FormEvent;
 use FOS\UserBundle\Event\GetResponseUserEvent;
@@ -19,11 +18,9 @@ use FOS\UserBundle\Form\Factory\FactoryInterface;
 use FOS\UserBundle\FOSUserEvents;
 use FOS\UserBundle\Model\UserInterface;
 use FOS\UserBundle\Model\UserManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Maximosojo\Bundle\BaseAdminBundle\Controller\EasyAdminBundle\AbstractDashboardController;
@@ -45,7 +42,7 @@ class ChangePasswordController extends AbstractDashboardController implements Da
 
     public function __construct(EventDispatcherInterface $eventDispatcher, FactoryInterface $formFactory, UserManagerInterface $userManager)
     {
-        $this->eventDispatcher = CompatibilityUtil::upgradeEventDispatcher($eventDispatcher);
+        $this->eventDispatcher = $eventDispatcher;
         $this->formFactory = $formFactory;
         $this->userManager = $userManager;
     }
